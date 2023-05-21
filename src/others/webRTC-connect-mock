@@ -1,0 +1,26 @@
+// const rtcPeerConnection = new RTCPeerConnection(configuration);
+
+// rtcPeerConnection.addEventListener('icecandidate', event => {
+//   if (event.candidate) {
+//     // Send the candidate to the remote peer through signaling server
+//     sendToSignalingServer({ type: 'candidate', candidate: event.candidate });
+//   }
+// });
+
+// rtcPeerConnection.addEventListener('track', event => {
+//   // Receive the remote stream and display it in the video element
+//   remoteVideo.srcObject = event.streams[0];
+// });
+
+// localStream.getTracks().forEach(track => {
+//   rtcPeerConnection.addTrack(track, localStream);
+// });
+
+// rtcPeerConnection.createOffer().then(offer => {
+//   return rtcPeerConnection.setLocalDescription(offer);
+// }).then(() => {
+//   // Send the local description to the remote peer through signaling server
+//   sendToSignalingServer({ type: 'offer', description: rtcPeerConnection.localDescription });
+// }).catch(error => {
+//   console.error('Error creating WebRTC offer:', error);
+// });

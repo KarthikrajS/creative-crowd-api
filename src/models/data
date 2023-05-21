@@ -1,0 +1,20 @@
+//  we can use a MongoDB aggregation pipeline to filter resources by subject and topic
+
+const resources = await Resource.aggregate([
+  {
+    $match: {
+      $or: [
+        { subject: { $in: user.likedSubjects } },
+        { topics: { $in: user.subscribedTopics } }
+      ]
+    }
+  },
+  {
+    $lookup: {
+      from: 'users',
+      localField: 'user',
+      foreignField: '_id',
+      as: 'owner'
+    }
+  }
+]);
