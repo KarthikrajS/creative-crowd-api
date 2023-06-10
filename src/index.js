@@ -42,7 +42,7 @@ app.use(cors());
 // Parse JSON bodies
 app.use(express.json());
 
-app.use(express.static('dist'));
+app.use(express.static('build'));
 
 // Setup database connection
 mongoose
